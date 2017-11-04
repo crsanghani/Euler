@@ -1,31 +1,43 @@
 function Code() {
-    multiplesOfThree: [];
-    multiplesOfFive: [];
-    multiplesOfFifteen: [];
+    storedMultiples: [];
+    sum: 0;
 }
 
 Code.prototype.multiples = function(int) {
-    let storedMultiplesOfThree = [];
-    let storedMultiplesOfFive = [];
-    let storedMultiplesOfFifteen = [];
 
     if (int < 3) {
         return 'No multiples found.';
     }
 
-    for (let i = 1; i < int + 1; i++) {
+    this._identifyMultiples(int);
+    this._sumOfStoredMultiples();
+    return this.sum;
+};
+
+Code.prototype._identifyMultiples = function(int) {
+    let storedMultiples = [];
+
+    for (let i = 1; i < int; i++) {
         if (i % 15 === 0) {
-            storedMultiplesOfFifteen.push(i);
+            storedMultiples.push(i);
         } else if (i % 5 === 0) {
-            storedMultiplesOfFive.push(i);
+            storedMultiples.push(i);
         } else if (i % 3 === 0) {
-            storedMultiplesOfThree.push(i);
+            storedMultiples.push(i);
         }
     }
 
-    this.multiplesOfThree = storedMultiplesOfThree;
-    this.multiplesOfFive = storedMultiplesOfFive;
-    this.multiplesOfFifteen = storedMultiplesOfFifteen;
+    this.storedMultiples = storedMultiples;
 };
+
+Code.prototype._sumOfStoredMultiples = function() {
+    let sum = 0;
+
+    this.storedMultiples.forEach(function(element) {
+        sum += element;
+    });
+    
+    this.sum = sum;
+}
 
 module.exports = Code;
