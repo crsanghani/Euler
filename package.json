@@ -1,0 +1,23 @@
+{
+  "name": "euler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crsanghani/Euler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crsanghani/Euler/issues"
+  },
+  "homepage": "https://github.com/crsanghani/Euler#readme"
+}
