@@ -5,8 +5,15 @@ describe('Sum of the multiples of 3 and 5 below 100', () => {
     beforeEach(function() {
         code = new Code();
     });
-    
-    it('should return 3 if given the number 3', () => {
-        expect(code.multiples(3)).toBe(3);
+
+    describe('Finding the multiples of 3 and 5', () => {
+        // it('should store all the multiples of 3 in an array', () => {
+        //     expect(code.multiples)
+        // });
+
+        it('should return "No multiples" if arg is < 3 ', () => {
+            expect(code.multiples(2)).toBe('No multiples found.');
+        });
     });
 });
+
